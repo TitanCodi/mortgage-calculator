@@ -1,15 +1,21 @@
 import MainCalculator from "@/components/calculator/MainCalculator"
 import { calculatorSEO } from "@/lib/calculatorSeo"
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
 
-  const data = calculatorSEO.find((c) => c.slug === params.slug)
+  const { slug } = await params
+
+  const data = calculatorSEO.find((c) => c.slug === slug)
 
   if (!data) {
     return (
       <main style={{ padding: "40px" }}>
         <h1>Calculator Not Found</h1>
-        <p>Slug received: {params.slug}</p>
+        <p>Slug received: {slug}</p>
       </main>
     )
   }
@@ -29,9 +35,8 @@ export default function Page({ params }: { params: { slug: string } }) {
         <h2>About This Calculator</h2>
 
         <p>
-          Financial calculators help estimate payments, interest costs,
-          and repayment timelines so borrowers can make informed
-          financial decisions.
+          Financial calculators help estimate payments,
+          interest costs, and repayment timelines.
         </p>
 
       </section>
@@ -40,7 +45,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   )
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
 
   return calculatorSEO.map((c) => ({
     slug: c.slug
