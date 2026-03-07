@@ -32,14 +32,19 @@ const calculatorContent: Record<string, any> = {
   }
 }
 
-export default function Page({ params }: { params: { slug?: string } }) {
-   const slug = params?.slug 
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
 
-  const data = calculatorContent[slug || ""]
+  const { slug } = await params
+
+  const data = calculatorContent[slug]
 
   if (!data) {
     return (
-      <main style={{padding:"40px"}}>
+      <main style={{ padding: "40px" }}>
         <h1>Calculator Not Found</h1>
         <p>Slug received: {slug}</p>
       </main>
@@ -57,7 +62,6 @@ export default function Page({ params }: { params: { slug?: string } }) {
 
       <section style={{ marginTop: "40px" }}>
         <h2>About This Calculator</h2>
-
         <p>
           Financial calculators help estimate loan payments,
           interest costs, and repayment timelines so borrowers
@@ -69,8 +73,7 @@ export default function Page({ params }: { params: { slug?: string } }) {
   )
 }
 
-export function generateStaticParams() {
-
+export async function generateStaticParams() {
   return [
     { slug: "mortgage-calculator-extra-payments" },
     { slug: "biweekly-mortgage-calculator" },
@@ -78,5 +81,4 @@ export function generateStaticParams() {
     { slug: "loan-calculator" },
     { slug: "car-loan-calculator" }
   ]
-
 }
