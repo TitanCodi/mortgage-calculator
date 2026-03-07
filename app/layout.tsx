@@ -87,8 +87,37 @@ export default function RootLayout({
       </head>
 
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
+
+  <header
+    style={{
+      borderBottom: "1px solid #eee",
+      padding: "15px 30px",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      background: "#fff"
+    }}
+  >
+    <strong style={{fontSize:"18px"}}>
+      RateCalcNow
+    </strong>
+
+    <nav style={{display:"flex", gap:"20px"}}>
+
+      <a href="/calculator">Calculator</a>
+
+      <a href="/privacy">Privacy</a>
+
+      <a href="/terms">Terms</a>
+
+      <a href="/contact">Contact</a>
+
+    </nav>
+  </header>
+
+  {children}
+
+</body>
     </html>
   );
 }
