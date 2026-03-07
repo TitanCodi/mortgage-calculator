@@ -1,11 +1,16 @@
-import type { MetadataRoute } from "next";
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://yourdomain.com";
+
+  const baseUrl = "https://ratecalcnow.com"
 
   return [
     {
-      url: `${baseUrl}/`,
+      url: baseUrl,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/calculator`,
       lastModified: new Date(),
     },
     {
@@ -20,5 +25,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
     },
-  ];
+  ]
 }
