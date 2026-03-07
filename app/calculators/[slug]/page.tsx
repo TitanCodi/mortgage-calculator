@@ -32,15 +32,16 @@ const calculatorContent: Record<string, any> = {
   }
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page({ params }: { params: { slug?: string } }) {
+   const slug = params?.slug 
 
-  const data = calculatorContent[params.slug]
+  const data = calculatorContent[slug || ""]
 
   if (!data) {
     return (
       <main style={{padding:"40px"}}>
         <h1>Calculator Not Found</h1>
-        <p>Slug received: {params.slug}</p>
+        <p>Slug received: {slug}</p>
       </main>
     )
   }
