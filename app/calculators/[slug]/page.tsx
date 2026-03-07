@@ -29,7 +29,7 @@ description:"Calculate car loan payments and total interest."
 
 }
 
-export default function Page({params}:any){
+export default function Page({ params }: { params: { slug: string } }) {
 
 const data = calculatorContent[params.slug]
 
