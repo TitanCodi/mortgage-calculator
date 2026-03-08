@@ -41,46 +41,7 @@ return(
 
 <>
 
-{/* HERO SECTION */}
 
-<section
-style={{
-textAlign:"center",
-marginBottom:"20px",
-padding:"25px",
-background:"#f8fafc",
-borderRadius:"12px",
-border:"1px solid #e5e7eb",
-maxWidth:"900px",
-marginLeft:"auto",
-marginRight:"auto"
-}}
->
-
-<h1
-style={{
-fontSize:"32px",
-marginBottom:"10px",
-fontWeight:700,
-letterSpacing:"-0.5px"
-}}
->
-Mortgage Calculator With Extra Payments
-</h1>
-
-<p
-style={{
-fontSize:"17px",
-color:"#555",
-maxWidth:"650px",
-margin:"0 auto",
-lineHeight:"1.6"
-}}
->
-Calculate how extra mortgage payments reduce loan term and interest.
-</p>
-
-</section>
 
 
 {/* CALCULATOR CARD */}
