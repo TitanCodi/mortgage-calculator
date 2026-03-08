@@ -88,36 +88,99 @@ export default function RootLayout({
 
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
 
-  <header
-    style={{
-      borderBottom: "1px solid #eee",
-      padding: "15px 30px",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      background: "#fff"
-    }}
-  >
-    <strong style={{fontSize:"18px"}}>
-      RateCalcNow
-    </strong>
+        {/* Sticky Header */}
 
-    <nav style={{display:"flex", gap:"20px"}}>
+        <header
+          style={{
+            position: "sticky",
+            top: 0,
+            zIndex: 1000,
+            background: "#ffffff",
+            borderBottom: "1px solid #e5e7eb",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "1100px",
+              margin: "0 auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "14px 20px",
+            }}
+          >
 
-      <a href="/calculator">Calculator</a>
+            {/* Logo */}
 
-      <a href="/privacy">Privacy</a>
+            <a
+              href="/"
+              style={{
+                fontSize: "18px",
+                fontWeight: 700,
+                textDecoration: "none",
+                color: "#111",
+                letterSpacing: "0.3px",
+              }}
+            >
+              📊 RateCalcNow
+            </a>
 
-      <a href="/terms">Terms</a>
+            {/* Navigation */}
 
-      <a href="/contact">Contact</a>
+            <nav
+              style={{
+                display: "flex",
+                gap: "24px",
+                fontSize: "14px",
+              }}
+            >
+              <a
+                href="/calculator"
+                style={{
+                  textDecoration: "none",
+                  color: "#333",
+                }}
+              >
+                Calculator
+              </a>
 
-    </nav>
-  </header>
+              <a
+                href="/privacy"
+                style={{
+                  textDecoration: "none",
+                  color: "#333",
+                }}
+              >
+                Privacy
+              </a>
 
-  {children}
+              <a
+                href="/terms"
+                style={{
+                  textDecoration: "none",
+                  color: "#333",
+                }}
+              >
+                Terms
+              </a>
 
-</body>
+              <a
+                href="/contact"
+                style={{
+                  textDecoration: "none",
+                  color: "#333",
+                }}
+              >
+                Contact
+              </a>
+            </nav>
+          </div>
+        </header>
+
+        {children}
+
+      </body>
     </html>
   );
 }
