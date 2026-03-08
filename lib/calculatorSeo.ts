@@ -19,42 +19,6 @@ description: "See how fast you can pay off your mortgage early."
 },
 
 {
-slug: "loan-calculator",
-title: "Loan Calculator",
-description: "Estimate loan payments, interest, and payoff timeline."
-},
-
-{
-slug: "car-loan-calculator",
-title: "Car Loan Calculator",
-description: "Calculate car loan payments and interest costs."
-},
-
-{
-slug: "compound-interest-calculator",
-title: "Compound Interest Calculator",
-description: "Estimate investment growth with compound interest."
-},
-
-{
-slug: "investment-calculator",
-title: "Investment Calculator",
-description: "Calculate long-term investment growth and returns."
-},
-
-{
-slug: "credit-card-payoff-calculator",
-title: "Credit Card Payoff Calculator",
-description: "Estimate how quickly you can pay off credit card debt."
-},
-
-{
-slug: "debt-payoff-calculator",
-title: "Debt Payoff Calculator",
-description: "Calculate strategies to pay off debt faster."
-},
-
-{
 slug: "refinance-calculator",
 title: "Mortgage Refinance Calculator",
 description: "Estimate savings from refinancing your mortgage."
@@ -67,27 +31,9 @@ description: "Estimate how much house you can afford."
 },
 
 {
-slug: "rent-vs-buy-calculator",
-title: "Rent vs Buy Calculator",
-description: "Compare the financial benefits of renting vs buying."
-},
-
-{
 slug: "interest-calculator",
 title: "Interest Calculator",
 description: "Calculate simple and compound interest earnings."
 },
-
-{
-slug: "apr-calculator",
-title: "APR Calculator",
-description: "Estimate annual percentage rate for loans and credit."
-},
-
-{
-slug: "savings-calculator",
-title: "Savings Calculator",
-description: "Estimate future savings growth with contributions."
-}
 
 ]
