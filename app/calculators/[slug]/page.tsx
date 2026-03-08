@@ -1,5 +1,6 @@
 import MainCalculator from "@/components/calculator/MainCalculator"
 import { calculatorSEO } from "@/lib/calculatorSeo"
+import Script from "next/script"
 
 export default async function Page({
   params,
@@ -29,7 +30,39 @@ export default async function Page({
         {data.description}
       </p>
 
+      {/* TOP AD */}
+
+      <div style={{ margin:"30px 0", textAlign:"center" }}>
+        <ins
+          className="adsbygoogle"
+          style={{display:"block"}}
+          data-ad-client="ca-pub-2548921396153742"
+          data-ad-slot="1111111111"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+        <Script id="ads-top">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
+      </div>
+
       <MainCalculator />
+
+      {/* MIDDLE AD */}
+
+      <div style={{ margin:"40px 0", textAlign:"center" }}>
+        <ins
+          className="adsbygoogle"
+          style={{display:"block"}}
+          data-ad-client="ca-pub-2548921396153742"
+          data-ad-slot="2222222222"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+        <Script id="ads-middle">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
+      </div>
 
       {/* About Section */}
 
@@ -106,6 +139,22 @@ export default async function Page({
         </div>
 
       </section>
+
+      {/* BOTTOM AD */}
+
+      <div style={{ margin:"40px 0", textAlign:"center" }}>
+        <ins
+          className="adsbygoogle"
+          style={{display:"block"}}
+          data-ad-client="ca-pub-2548921396153742"
+          data-ad-slot="3333333333"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+        <Script id="ads-bottom">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
+      </div>
 
       {/* FAQ SCHEMA FOR GOOGLE */}
 
