@@ -52,7 +52,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+
         {/* Google AdSense Script */}
         <Script
           id="adsense-script"
@@ -62,7 +63,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
 
-        {/* Structured Data for Calculator */}
+        {/* Structured Data */}
         <Script
           id="structured-data"
           type="application/ld+json"
@@ -84,12 +85,8 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
-
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
 
         {/* Sticky Header */}
-
         <header
           style={{
             position: "sticky",
@@ -107,12 +104,9 @@ export default function RootLayout({
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              padding: "14px 20px",
+              padding: "12px 16px",
             }}
           >
-
-            {/* Logo */}
-
             <a
               href="/"
               style={{
@@ -126,59 +120,78 @@ export default function RootLayout({
               📊 RateCalcNow
             </a>
 
-            {/* Navigation */}
-
             <nav
               style={{
                 display: "flex",
-                gap: "24px",
+                gap: "18px",
                 fontSize: "14px",
+                flexWrap: "wrap",
+                justifyContent: "flex-end",
               }}
             >
-              <a
-                href="/calculator"
-                style={{
-                  textDecoration: "none",
-                  color: "#333",
-                }}
-              >
-                Calculator
-              </a>
-
-              <a
-                href="/privacy"
-                style={{
-                  textDecoration: "none",
-                  color: "#333",
-                }}
-              >
-                Privacy
-              </a>
-
-              <a
-                href="/terms"
-                style={{
-                  textDecoration: "none",
-                  color: "#333",
-                }}
-              >
-                Terms
-              </a>
-
-              <a
-                href="/contact"
-                style={{
-                  textDecoration: "none",
-                  color: "#333",
-                }}
-              >
-                Contact
-              </a>
+              <a href="/calculator">Calculator</a>
+              <a href="/about">About</a>
+              <a href="/privacy">Privacy</a>
+              <a href="/disclaimer">Disclaimer</a>
+              <a href="/terms">Terms</a>
+              <a href="/contact">Contact</a>
             </nav>
           </div>
         </header>
 
-        {children}
+        {/* Page Content */}
+        <main style={{minHeight:"70vh"}}>
+          {children}
+        </main>
+
+        {/* Footer */}
+        <footer
+          style={{
+            marginTop: "60px",
+            borderTop: "1px solid #e5e7eb",
+            background: "#fafafa"
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "1100px",
+              margin: "0 auto",
+              padding: "25px 20px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "10px",
+              fontSize: "14px",
+              color: "#555"
+            }}
+          >
+
+            <div style={{fontWeight:600}}>
+              📊 RateCalcNow
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                gap: "18px",
+                flexWrap: "wrap",
+                justifyContent: "center"
+              }}
+            >
+              <a href="/calculator">Calculator</a>
+              <a href="/about">About</a>
+              <a href="/privacy">Privacy</a>
+              <a href="/disclaimer">Disclaimer</a>
+              <a href="/terms">Terms</a>
+              <a href="/contact">Contact</a>
+            </div>
+
+            <div style={{fontSize:"13px", color:"#777"}}>
+              © {new Date().getFullYear()} RateCalcNow
+            </div>
+
+          </div>
+        </footer>
 
       </body>
     </html>
