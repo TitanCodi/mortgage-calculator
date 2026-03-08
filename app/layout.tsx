@@ -186,9 +186,9 @@ export default function RootLayout({
               <a href="/contact">Contact</a>
             </div>
 
-            <div style={{fontSize:"13px", color:"#777"}}>
-              © {new Date().getFullYear()} RateCalcNow
-            </div>
+            <div style={{fontSize:"13px", color:"#777", textAlign:"center"}}>
+  © {new Date().getFullYear()} RateCalcNow. All rights reserved.
+</div>
 
           </div>
         </footer>
