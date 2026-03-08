@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Script from "next/script"
 
 import InputField from "@/components/calculator/InputField"
 import Chart from "@/components/calculator/Chart"
@@ -10,7 +9,7 @@ import ScheduleTable from "@/components/calculator/ScheduleTable"
 import { calculateMortgage } from "@/lib/mortgageMath"
 import { formatCurrency } from "@/utils/formatCurrency"
 
-export default function MainCalculator(){
+export default function MainCalculator() {
 
 const [principal,setPrincipal] = useState(350000)
 const [rate,setRate] = useState(6.5)
@@ -38,92 +37,66 @@ setResult(res)
 
 }
 
-function exportCSV(){
-
-if(!result) return
-
-const rows = result.schedule.map((p:any)=>[
-p.paymentNumber,
-p.date.toLocaleDateString(),
-p.principal,
-p.interest,
-p.extra,
-p.balance
-])
-
-const header = [
-"Payment #",
-"Date",
-"Principal",
-"Interest",
-"Extra",
-"Balance"
-]
-
-const csv =
-[header,...rows]
-.map(r=>r.join(","))
-.join("\n")
-
-const blob =
-new Blob([csv],{type:"text/csv"})
-
-const url =
-window.URL.createObjectURL(blob)
-
-const link =
-document.createElement("a")
-
-link.href = url
-link.download = "amortization.csv"
-link.click()
-
-}
-
 return(
 
-<main
-style={{
-maxWidth:"1100px",
-margin:"40px auto",
-padding:"30px",
-fontFamily:"Arial, sans-serif",
-background:"#ffffff",
-borderRadius:"12px",
-boxShadow:"0 4px 20px rgba(0,0,0,0.06)"
-}}
->
+<>
 
-{/* Hero */}
+{/* HERO SECTION */}
 
 <section
 style={{
 textAlign:"center",
 marginBottom:"40px",
-padding:"30px",
+padding:"35px",
 background:"#f8fafc",
-borderRadius:"12px"
+borderRadius:"12px",
+border:"1px solid #e5e7eb",
+maxWidth:"900px",
+marginLeft:"auto",
+marginRight:"auto"
 }}
 >
 
-<h2 style={{fontSize:"32px", marginBottom:"10px"}}>
+<h2
+style={{
+fontSize:"32px",
+marginBottom:"10px",
+fontWeight:700,
+letterSpacing:"-0.5px"
+}}
+>
 Mortgage Calculator With Extra Payments
 </h2>
 
-<p style={{fontSize:"17px", color:"#555"}}>
-Estimate monthly payments, interest, and payoff timeline.
+<p
+style={{
+fontSize:"17px",
+color:"#555",
+maxWidth:"650px",
+margin:"0 auto",
+lineHeight:"1.6"
+}}
+>
+Estimate your monthly mortgage payment, total interest,
+loan payoff date, and see how extra payments can reduce
+your mortgage faster.
 </p>
 
 </section>
 
-{/* Calculator */}
+
+{/* CALCULATOR CARD */}
 
 <section
 style={{
 background:"#ffffff",
 padding:"25px",
 borderRadius:"12px",
-boxShadow:"0 3px 12px rgba(0,0,0,0.05)"
+boxShadow:"0 3px 12px rgba(0,0,0,0.05)",
+marginTop:"20px",
+maxWidth:"900px",
+marginLeft:"auto",
+marginRight:"auto"
 }}
 >
 
@@ -137,9 +110,13 @@ marginBottom:"20px"
 >
 
 <InputField label="Loan Amount" value={principal} onChange={setPrincipal}/>
+
 <InputField label="Interest Rate (%)" value={rate} step={0.1} onChange={setRate}/>
+
 <InputField label="Loan Term (years)" value={years} onChange={setYears}/>
+
 <InputField label="Extra Monthly Payment" value={extra} onChange={setExtra}/>
+
 <InputField label="Lump Sum Payment" value={lump} onChange={setLump}/>
 
 <div>
@@ -155,7 +132,8 @@ style={{
 width:"100%",
 padding:"10px",
 borderRadius:"8px",
-border:"1px solid #ccc"
+border:"1px solid #ccc",
+fontSize:"15px"
 }}
 >
 
@@ -180,23 +158,54 @@ border:"none",
 borderRadius:"10px",
 fontWeight:600,
 fontSize:"16px",
-cursor:"pointer"
+cursor:"pointer",
+boxShadow:"0 4px 8px rgba(0,0,0,0.1)"
 }}
 >
-
 Calculate Mortgage
-
 </button>
 
 </div>
 
 </section>
 
-{/* Results */}
+
+{/* RESULTS */}
 
 {result && (
 
 <>
+
+<section
+style={{
+marginTop:"35px",
+display:"grid",
+gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",
+gap:"20px"
+}}
+>
+
+<div style={{background:"#f8fafc",padding:"20px",borderRadius:"10px"}}>
+<p>Monthly Payment</p>
+<h3>{formatCurrency(result.regularPayment)}</h3>
+</div>
+
+<div style={{background:"#f8fafc",padding:"20px",borderRadius:"10px"}}>
+<p>Total Interest</p>
+<h3>{formatCurrency(result.totalInterest)}</h3>
+</div>
+
+<div style={{background:"#f8fafc",padding:"20px",borderRadius:"10px"}}>
+<p>Payoff Time</p>
+<h3>{result.payoffYears.toFixed(1)} yrs</h3>
+</div>
+
+<div style={{background:"#f8fafc",padding:"20px",borderRadius:"10px"}}>
+<p>Interest Saved</p>
+<h3>{formatCurrency(result.interestSaved)}</h3>
+</div>
+
+</section>
 
 <Chart schedule={result.schedule} />
 
@@ -206,7 +215,7 @@ Calculate Mortgage
 
 )}
 
-</main>
+</>
 
 )
 
