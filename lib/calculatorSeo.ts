@@ -36,4 +36,9 @@ title: "Interest Calculator",
 description: "Calculate simple and compound interest earnings."
 },
 
+{
+slug: "mortgage-amortization-calculator",
+title: "Mortgage Amortization Calculator",
+description: "View a full mortgage amortization schedule and see how extra payments reduce loan interest."
+}
 ]

@@ -79,66 +79,118 @@ export default async function Page({
 
       {/* FAQ SECTION */}
 
-      <section style={{ marginTop: "50px" }}>
-        <h2>Mortgage Calculator FAQs</h2>
+<section
+  style={{
+    marginTop: "60px",
+    background: "#f8fafc",
+    padding: "30px",
+    borderRadius: "12px"
+  }}
+>
 
-        <h3>How is a mortgage payment calculated?</h3>
-        <p>
-          Mortgage payments are calculated using the loan amount,
-          interest rate, and loan term. The formula determines the
-          monthly payment required to fully repay the loan over time.
-        </p>
+<h2 style={{marginBottom:"20px"}}>
+Mortgage Calculator FAQs
+</h2>
 
-        <h3>Do extra payments reduce interest?</h3>
-        <p>
-          Yes. Extra payments reduce the remaining loan balance,
-          which lowers the total interest paid and shortens the
-          payoff timeline.
-        </p>
+<div style={{marginBottom:"18px"}}>
+<h3 style={{fontSize:"18px"}}>
+How is a mortgage payment calculated?
+</h3>
+<p style={{color:"#555"}}>
+Mortgage payments are calculated using the loan amount,
+interest rate, and loan term. The formula determines the
+monthly payment required to fully repay the loan.
+</p>
+</div>
 
-        <h3>What is a bi-weekly mortgage payment?</h3>
-        <p>
-          Bi-weekly payments split your monthly payment into
-          half payments made every two weeks. This results in
-          one extra payment per year and reduces the loan term.
-        </p>
+<div style={{marginBottom:"18px"}}>
+<h3 style={{fontSize:"18px"}}>
+Do extra payments reduce interest?
+</h3>
+<p style={{color:"#555"}}>
+Yes. Extra payments reduce the remaining loan balance,
+which lowers total interest paid and shortens the
+payoff timeline.
+</p>
+</div>
 
-      </section>
+<div>
+<h3 style={{fontSize:"18px"}}>
+What is a bi-weekly mortgage payment?
+</h3>
+<p style={{color:"#555"}}>
+Bi-weekly payments split your monthly payment into
+half payments made every two weeks. This results in
+one extra payment per year and reduces the loan term.
+</p>
+</div>
 
-      {/* RELATED CALCULATORS */}
+</section>
 
-      <section style={{ marginTop: "60px" }}>
+ {/* RELATED MORTGAGE CALCULATORS */}
 
-        <h2>Related Financial Calculators</h2>
+<section style={{ marginTop: "60px" }}>
 
-        <div
-          style={{
-            display:"grid",
-            gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",
-            gap:"15px",
-            marginTop:"20px"
-          }}
-        >
+<h2 style={{marginBottom:"20px"}}>
+Related Mortgage Calculators
+</h2>
 
-          <a href="/calculators/mortgage-payoff-calculator">
-            Mortgage Payoff Calculator
-          </a>
+<div
+  style={{
+    display:"grid",
+    gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",
+    gap:"15px"
+  }}
+>
 
-          <a href="/calculators/biweekly-mortgage-calculator">
-            Bi-Weekly Mortgage Calculator
-          </a>
+<a
+href="/calculators/mortgage-calculator-extra-payments"
+style={{
+padding:"18px",
+background:"#f8fafc",
+borderRadius:"10px",
+textDecoration:"none",
+color:"#111",
+fontWeight:500,
+border:"1px solid #e5e7eb"
+}}
+>
+Mortgage Calculator With Extra Payments
+</a>
 
-          <a href="/calculators/loan-calculator">
-            Loan Calculator
-          </a>
+<a
+href="/calculators/mortgage-payoff-calculator"
+style={{
+padding:"18px",
+background:"#f8fafc",
+borderRadius:"10px",
+textDecoration:"none",
+color:"#111",
+fontWeight:500,
+border:"1px solid #e5e7eb"
+}}
+>
+Mortgage Payoff Calculator
+</a>
 
-          <a href="/calculators/car-loan-calculator">
-            Car Loan Calculator
-          </a>
+<a
+href="/calculators/biweekly-mortgage-calculator"
+style={{
+padding:"18px",
+background:"#f8fafc",
+borderRadius:"10px",
+textDecoration:"none",
+color:"#111",
+fontWeight:500,
+border:"1px solid #e5e7eb"
+}}
+>
+Bi-Weekly Mortgage Calculator
+</a>
 
-        </div>
+</div>
 
-      </section>
+</section>
 
       {/* BOTTOM AD */}
 
