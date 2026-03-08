@@ -46,8 +46,8 @@ return(
 <section
 style={{
 textAlign:"center",
-marginBottom:"40px",
-padding:"35px",
+marginBottom:"20px",
+padding:"25px",
 background:"#f8fafc",
 borderRadius:"12px",
 border:"1px solid #e5e7eb",
@@ -57,7 +57,7 @@ marginRight:"auto"
 }}
 >
 
-<h2
+<h1
 style={{
 fontSize:"32px",
 marginBottom:"10px",
@@ -66,7 +66,7 @@ letterSpacing:"-0.5px"
 }}
 >
 Mortgage Calculator With Extra Payments
-</h2>
+</h1>
 
 <p
 style={{
@@ -77,9 +77,7 @@ margin:"0 auto",
 lineHeight:"1.6"
 }}
 >
-Estimate your monthly mortgage payment, total interest,
-loan payoff date, and see how extra payments can reduce
-your mortgage faster.
+Calculate how extra mortgage payments reduce loan term and interest.
 </p>
 
 </section>
