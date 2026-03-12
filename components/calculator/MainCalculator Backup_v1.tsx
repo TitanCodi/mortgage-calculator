@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Script from "next/script"
 
 import InputField from "@/components/calculator/InputField"
 import Chart from "@/components/calculator/Chart"
@@ -21,6 +20,7 @@ const [lump,setLump] = useState(0)
 const isExtraPayment = type === "extra"
 const isPayoff = type === "payoff"
 const isBiweekly = type === "biweekly"
+
 
 const [frequency,setFrequency] =
 useState<"monthly"|"bi-weekly">("monthly")
@@ -46,24 +46,7 @@ return(
 
 <>
 
-{/* AD #1 — TOP AD (high CTR) */}
 
-<div style={{margin:"30px 0", textAlign:"center"}}>
-
-<ins
-className="adsbygoogle"
-style={{display:"block"}}
-data-ad-client="ca-pub-2548921396153742"
-data-ad-slot="1234567890"
-data-ad-format="auto"
-data-full-width-responsive="true"
-/>
-
-<Script id="ads-top">
-{`(adsbygoogle = window.adsbygoogle || []).push({});`}
-</Script>
-
-</div>
 
 
 {/* CALCULATOR CARD */}
@@ -192,27 +175,6 @@ gap:"20px"
 
 </section>
 
-
-{/* AD #2 — AFTER RESULTS (very high RPM) */}
-
-<div style={{margin:"40px 0", textAlign:"center"}}>
-
-<ins
-className="adsbygoogle"
-style={{display:"block"}}
-data-ad-client="ca-pub-2548921396153742"
-data-ad-slot="2345678901"
-data-ad-format="auto"
-data-full-width-responsive="true"
-/>
-
-<Script id="ads-middle">
-{`(adsbygoogle = window.adsbygoogle || []).push({});`}
-</Script>
-
-</div>
-
-
 <Chart schedule={result.schedule} />
 
 <ScheduleTable schedule={result.schedule} />
@@ -220,27 +182,6 @@ data-full-width-responsive="true"
 </>
 
 )}
-
-
-{/* AD #3 — BOTTOM AD */}
-
-<div style={{margin:"40px 0", textAlign:"center"}}>
-
-<ins
-className="adsbygoogle"
-style={{display:"block"}}
-data-ad-client="ca-pub-2548921396153742"
-data-ad-slot="3456789012"
-data-ad-format="auto"
-data-full-width-responsive="true"
-/>
-
-<Script id="ads-bottom">
-{`(adsbygoogle = window.adsbygoogle || []).push({});`}
-</Script>
-
-</div>
-
 
 </>
 
